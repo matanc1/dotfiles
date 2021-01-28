@@ -11,3 +11,6 @@
         ~/.vimrc: 
         ~/.gitignore_global:
         ~/.gitconfig:
+
+- shell:
+      - [git submodule update --init --recursive, Installing submodules]
