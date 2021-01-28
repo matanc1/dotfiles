@@ -1,5 +1,6 @@
 alias ls='ls --color=auto'
 alias grep='grep --color'
+alias explorer="explorer.exe ." #Open the windows explorer in the current directory
 
 # Aliases to protect against overwriting
  alias rm='rm -i'
