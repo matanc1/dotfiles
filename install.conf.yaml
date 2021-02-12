@@ -8,6 +8,7 @@
 - link:
         ~/.dotfiles: ''
         ~/.zshrc: 
+        ~/.bashrc:
         ~/.vimrc: 
         ~/.gitignore_global:
         ~/.gitconfig:
