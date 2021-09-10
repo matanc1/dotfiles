@@ -22,3 +22,6 @@ alias h='history'
 #find files and directories
 alias ff='find . -type f -name'
 alias fd='find . -type d -name'
+
+alias ..='sudo $(fc -ln -1)'
+
