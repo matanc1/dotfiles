@@ -24,4 +24,4 @@ alias ff='find . -type f -name'
 alias fd='find . -type d -name'
 
 alias ..='sudo $(fc -ln -1)'
-
+alias dpr='echo "y" | docker container prune'

@@ -3,3 +3,6 @@
 	email = 6199102+matanc1@users.noreply.github.com
 [core]
 	editor = vim
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
