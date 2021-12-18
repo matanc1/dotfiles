@@ -1,4 +1,4 @@
-apt update -y
-apt install -y git
-apt install -y vim
-apt install -y zsh
+sudo apt update -y
+sudo apt install -y git
+sudo apt install -y vim
+sudo apt install -y zsh
