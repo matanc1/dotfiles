@@ -1,11 +1,13 @@
-ARG USER=matan
 FROM ubuntu:20.04
 
 # Setting up arguments needed for the dockerfile
 ARG USER
+ARG DEBIAN_FRONTEND=noninteractive 
+
+ENV USER ${USER}
 
 # Setting up the user
-RUN useradd -m ${USER} -g users -G sudo
+RUN useradd -m $USER -g users -G sudo
 
 # Installing system wide software and enable sudo for the user
 RUN apt update && \
