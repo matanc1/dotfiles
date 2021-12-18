@@ -1,4 +1,4 @@
-sudo apt update
-sudo apt install ssh
-sudo apt install vim
-sudo apt install zsh
+apt update -y
+apt install -y git
+apt install -y vim
+apt install -y zsh
