@@ -1,7 +1,7 @@
 - defaults:
-            link:
-                create: true
-                relink: true
+        link:
+        create: true
+        relink: true
 
 - clean: ['~', '~/.config']
 
@@ -13,6 +13,8 @@
         ~/.gitignore_global:
         ~/.gitconfig:
         ~/.tmux.conf:
+        ~/.docker:
 
 - shell:
       - [git submodule update --init --recursive, Installing submodules]
+      - [chsh -s $(which zsh), Making zsh the default shell]

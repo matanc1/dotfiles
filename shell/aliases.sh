@@ -25,3 +25,5 @@ alias fd='find . -type d -name'
 
 alias ..='sudo $(fc -ln -1)'
 alias dpr='echo "y" | docker container prune'
+alias drmi='docker rmi'
+alias dim='docker images'
