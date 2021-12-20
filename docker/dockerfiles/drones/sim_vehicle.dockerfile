@@ -8,4 +8,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN sudo ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 RUN ardupilot/Tools/environment_install/install-prereqs-ubuntu.sh -y
 
-ENTRYPOINT ./ardupilot/Tools/autotest/sim_vehicle.py -v ArduCopter --console --map
+ENTRYPOINT ["./ardupilot/Tools/autotest/sim_vehicle.py"]
+
+CMD ["-v", "ArduCopter", "--console", "--map"]
