@@ -18,6 +18,7 @@ RUN apt update && \
                 python3 \
                 python-is-python3 \
                 python3-pip \
+                zip unzip \
                 && \
     pip install ipython && \ 
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
