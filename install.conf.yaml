@@ -1,7 +1,8 @@
 - defaults:
-            link:
+        link:
                 create: true
                 relink: true
+                force: true
 
 - clean: ['~', '~/.config']
 
@@ -13,6 +14,11 @@
         ~/.gitignore_global:
         ~/.gitconfig:
         ~/.tmux.conf:
+        ~/.docker:
+
+- create: 
+        ~/workspace:
 
 - shell:
       - [git submodule update --init --recursive, Installing submodules]
+      - [sudo chsh -s $(which zsh) $(whoami), Making zsh the default shell]

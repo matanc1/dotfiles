@@ -5,7 +5,7 @@ set -e
 
 # Install requirements 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-source ${BASEDIR}/setup/requirements.sh
+source ${BASEDIR}/setup/system_requirements.sh
 
 # Configure dotbot - set up all the symlinks
 CONFIG="install.conf.yaml"
@@ -17,8 +17,3 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
-
-
-# Change shell to zsh
-echo "To change shell enter your password"
-chsh -s $(which zsh)
