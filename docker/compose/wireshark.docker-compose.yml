@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  wireshark:
+    build:
+      context: . 
+      dockerfile: ../dockerfiles/wireshark.dockerfile
+    container_name: "wireshark"
+    image: wireshark
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    network_mode: host
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
