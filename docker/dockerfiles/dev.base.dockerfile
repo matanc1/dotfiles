@@ -28,7 +28,7 @@ RUN apt update && \
 
 USER ${USER}
 WORKDIR /home/${USER}/workspace
-RUN git clone -b feature/adding-base-dockerfiles --recurse-submodules https://github.com/matanc1/dotfiles.git && \ 
+RUN git clone --recurse-submodules https://github.com/matanc1/dotfiles.git && \ 
     cd dotfiles && \
     ./install
 ENV PATH=/home/${USER}/.local/bin:$PATH

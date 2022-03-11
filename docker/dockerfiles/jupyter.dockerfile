@@ -13,6 +13,14 @@ RUN pip install jupyterlab \
     scipy \
     jupyter_contrib_nbextensions \ 
     arrow 
+RUN jupyter contrib nbextension install --user && \
+    jupyter nbextension enable execute_time/ExecuteTime && \
+    jupyter nbextension enable codefolding/main && \ 
+    jupyter nbextension enable scratchpad/main && \ 
+    jupyter nbextension enable tree-filter/index && \ 
+    jupyter nbextension enable collapsible_headings/main 
+
+ 
 
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini

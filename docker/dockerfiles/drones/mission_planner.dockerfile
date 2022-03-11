@@ -1,7 +1,7 @@
 FROM matancohen/dev_base as builder
 
 WORKDIR /mission_planner
-ADD https://firmware.ardupilot.org/Tools/MissionPlanner/MissionPlanner-1.3.74.zip mp.zip
+ADD https://firmware.ardupilot.org/Tools/MissionPlanner/archive/MissionPlanner-1.3.74.zip mp.zip
 
 RUN sudo chmod 777 mp.zip 
 RUN unzip mp.zip -d /mission_planner/files
