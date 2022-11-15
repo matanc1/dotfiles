@@ -3,4 +3,5 @@
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	name = matan
+	name = Matan Cohen
+	email = 6199102+matanc1@users.noreply.github.com

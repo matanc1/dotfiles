@@ -20,9 +20,6 @@
                 path: docker
 
 
-- create: 
-        ~/workspace:
-
 - shell:
       - [git submodule update --init --recursive, Installing submodules]
       - [sudo chsh -s $(which zsh) $(whoami), Making zsh the default shell]
