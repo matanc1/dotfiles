@@ -8,7 +8,6 @@ alias explorer="explorer.exe ." #Open the windows explorer in the current direct
  alias mv='mv -i'
 
 
-
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='ls -lFh'     #size,show type,human readable
 alias la='ls -lAFh'   #long list,show almost all,show type,human readable
@@ -27,3 +26,12 @@ alias ..='sudo $(fc -ln -1)'
 alias dpr='echo "y" | docker container prune'
 alias drmi='docker rmi'
 alias dim='docker images'
+
+
+function start_dev_env {
+    empty_compose_file="""version: '2'"""
+    echo $empty_compose_file > .docker-compose.yml
+    docker-compose -f .docker-compose.yml -f ~/.dockerfiles/compose/dev_environment.docker-compose.yml build --build-arg USER=$USER
+    docker-compose -f .docker-compose.yml -f ~/.dockerfiles/compose/dev_environment.docker-compose.yml up
+    rm -f .docker-compose.yml
+}

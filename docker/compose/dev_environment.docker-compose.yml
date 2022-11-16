@@ -2,10 +2,12 @@ version: "3.3"
 services:
   development:
     build:
-      context: . 
-      dockerfile: ../dockerfiles/dev.base.dockerfile
+      dockerfile: $HOME/.dockerfiles/dockerfiles/dev.base.dockerfile
     container_name: "development"
     environment:
       - USER=$USER
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - .:/home/$USER/workspace
+    ports:
+      - 8888:8888

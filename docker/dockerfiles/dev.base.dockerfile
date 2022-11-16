@@ -25,8 +25,8 @@ RUN apt update && \
     pip install ipython \
                 jupyterlab \ 
                 matplotlib \
-                "nbconvert<6"\
                 pandas \
+                jupytext \
                 nbdev \
                 opencv-python \
                 pandas \
@@ -35,7 +35,7 @@ RUN apt update && \
                 jupyter_contrib_nbextensions \ 
                 arrow && \ 
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
-    jupyter contrib nbextension install --user && \
+    jupyter contrib nbextension install --system && \
     jupyter nbextension enable execute_time/ExecuteTime && \
     jupyter nbextension enable codefolding/main && \ 
     jupyter nbextension enable scratchpad/main && \ 
