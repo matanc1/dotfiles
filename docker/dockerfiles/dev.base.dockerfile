@@ -32,15 +32,17 @@ RUN apt update && \
                 pandas \
                 scikit-learn \
                 scipy \
+                bash_kernel \
                 jupyter_contrib_nbextensions \ 
                 arrow && \ 
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
-    jupyter contrib nbextension install --system && \
-    jupyter nbextension enable execute_time/ExecuteTime && \
+    jupyter contrib nbextension install --system --sys-prefix
+RUN jupyter nbextension enable execute_time/ExecuteTime && \
     jupyter nbextension enable codefolding/main && \ 
     jupyter nbextension enable scratchpad/main && \ 
     jupyter nbextension enable tree-filter/index && \ 
-    jupyter nbextension enable collapsible_headings/main 
+    jupyter nbextension enable collapsible_headings/main && \
+    python -m bash_kernel.install
     
 
 USER ${USER}
