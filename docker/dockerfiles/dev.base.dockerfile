@@ -57,4 +57,4 @@ ENTRYPOINT ["/tini", "-g", "--"]
 ARG PORT=8888
 EXPOSE ${PORT}
 
-CMD jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --no-browser --NotebookApp.password='' --NotebookApp.token=''
+CMD jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token=''
