@@ -5,7 +5,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo apt install -y vim
     sudo apt install -y zsh
     sudo apt install -y python3-pip
-    sudo apt install -y fzf
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew update

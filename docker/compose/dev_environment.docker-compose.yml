@@ -2,7 +2,10 @@ version: "3.3"
 services:
   development:
     build:
+      context: .
       dockerfile: $HOME/.dockerfiles/dockerfiles/dev.base.dockerfile
+      args:
+        - USER
     container_name: "development"
     environment:
       - USER=$USER

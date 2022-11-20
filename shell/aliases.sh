@@ -29,9 +29,9 @@ alias dim='docker images'
 
 
 function start_dev_env {
-    empty_compose_file="""version: '2'"""
+    empty_compose_file="""version: '3.3'"""
     echo $empty_compose_file > .docker-compose.yml
-    docker-compose -f .docker-compose.yml -f ~/.dockerfiles/compose/dev_environment.docker-compose.yml build --build-arg USER=$USER
-    docker-compose -f .docker-compose.yml -f ~/.dockerfiles/compose/dev_environment.docker-compose.yml up
+#    docker build -f ~/.dockerfiles/compose/dev_environment.docker-compose.yml
+    docker-compose -f .docker-compose.yml -f ~/.dockerfiles/compose/dev_environment.docker-compose.yml up --build
     rm -f .docker-compose.yml
 }

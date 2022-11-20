@@ -36,20 +36,17 @@ RUN apt update && \
                 jupyter_contrib_nbextensions \ 
                 arrow && \ 
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers && \
-    jupyter contrib nbextension install --system --sys-prefix
+    jupyter contrib nbextension install --system 
+    
+
+USER ${USER}
 RUN jupyter nbextension enable execute_time/ExecuteTime && \
     jupyter nbextension enable codefolding/main && \ 
     jupyter nbextension enable scratchpad/main && \ 
     jupyter nbextension enable tree-filter/index && \ 
     jupyter nbextension enable collapsible_headings/main && \
     python -m bash_kernel.install
-    
-
-USER ${USER}
 WORKDIR /home/${USER}/workspace
-RUN git clone --recurse-submodules https://github.com/matanc1/dotfiles.git && \ 
-    cd dotfiles && \
-    ./install
 ENV PATH=/home/${USER}/.local/bin:$PATH
 
 ENV TINI_VERSION v0.19.0
