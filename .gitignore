@@ -1,0 +1,10 @@
+docker/.buildNodeID
+docker/.token_seed
+docker/.token_seed.lock
+docker/config.json
+docker/contexts
+docker/features.json
+docker/buildx/.lock
+docker/buildx/current
+docker/desktop/log/host/docker-desktop-user-distro.log
+docker/scan/config.json

@@ -6,6 +6,14 @@ services:
       dockerfile: $HOME/.dockerfiles/dockerfiles/dev.base.dockerfile
       args:
         - USER
+    shm_size: '6gb'
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
     container_name: "development"
     environment:
       - USER=$USER
