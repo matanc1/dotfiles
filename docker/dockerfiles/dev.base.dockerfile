@@ -1,13 +1,14 @@
-FROM ubuntu:20.04
-
-# Setting up arguments needed for the dockerfile
-ARG USER
-ARG DEBIAN_FRONTEND=noninteractive 
-
-ENV USER ${USER}
+FROM pytorch/pytorch
 
 # Setting up the user
+ARG USER
+ENV USER ${USER}
 RUN useradd -m $USER -g users -G sudo
+ENV PATH=/home/${USER}/.local/bin:$PATH
+ENV FASTAI_HOME=/home/${USER}/workspace/cloned/fastai/fasthome
+
+# This setting makes the apt installs be non-interactive (not asking for user input)
+ARG DEBIAN_FRONTEND=noninteractive 
 
 # Installing system wide software and enable sudo for the user
 RUN apt update && \
@@ -15,9 +16,6 @@ RUN apt update && \
     apt install -y \
                 sudo \
                 git \ 
-                python3 \
-                python-is-python3 \
-                python3-pip \
                 zip unzip \
                 net-tools \
                 iputils-ping \
@@ -25,6 +23,8 @@ RUN apt update && \
     pip install ipython \
                 jupyterlab \ 
                 matplotlib \
+                duckduckgo_search \ 
+                fastai \
                 pandas \
                 jupytext \
                 nbdev \
@@ -47,14 +47,10 @@ RUN jupyter nbextension enable execute_time/ExecuteTime && \
     jupyter nbextension enable collapsible_headings/main && \
     python -m bash_kernel.install
 WORKDIR /home/${USER}/workspace
-ENV PATH=/home/${USER}/.local/bin:$PATH
 
 ENV TINI_VERSION v0.19.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN sudo chmod +x /tini
 ENTRYPOINT ["/tini", "-g", "--"]
-
-ARG PORT=8888
-EXPOSE ${PORT}
 
 CMD jupyter notebook --allow-root --ip=0.0.0.0 --port=8888 --NotebookApp.token=''
