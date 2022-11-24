@@ -5,7 +5,7 @@ ARG USER
 ENV USER ${USER}
 RUN useradd -m $USER -g users -G sudo
 ENV PATH=/home/${USER}/.local/bin:$PATH
-ENV FASTAI_HOME=/home/${USER}/workspace/cloned/fastai/fasthome
+ENV FASTAI_HOME=/home/${USER}/workspace/cloned/fastai/fastai_home
 
 # This setting makes the apt installs be non-interactive (not asking for user input)
 ARG DEBIAN_FRONTEND=noninteractive 
@@ -26,6 +26,10 @@ RUN apt update && \
                 duckduckgo_search \ 
                 fastai \
                 pandas \
+                datasets \ 
+                transformers \ 
+                protobuf==3.20.1 \ 
+                kaggle \ 
                 jupytext \
                 nbdev \
                 opencv-python \
