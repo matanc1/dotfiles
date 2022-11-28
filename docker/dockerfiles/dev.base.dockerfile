@@ -17,6 +17,7 @@ RUN apt update && \
                 sudo \
                 git \ 
                 zip unzip \
+                graphviz \
                 net-tools \
                 iputils-ping \
                 && \
@@ -25,6 +26,7 @@ RUN apt update && \
                 matplotlib \
                 duckduckgo_search \ 
                 fastai \
+                fastbook \
                 pandas \
                 datasets \ 
                 transformers \ 
