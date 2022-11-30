@@ -27,6 +27,7 @@ RUN apt update && \
                 duckduckgo_search \ 
                 fastai \
                 fastbook \
+                dtreeviz \ 
                 pandas \
                 datasets \ 
                 transformers \ 
