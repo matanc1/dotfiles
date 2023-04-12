@@ -11,6 +11,7 @@
         ~/.zshrc: 
         ~/.bashrc:
         ~/.vimrc: 
+        ~/.ssh/config: 'ssh_config'
         ~/.gitignore_global:
         ~/.gitconfig:
         ~/.tmux.conf:
