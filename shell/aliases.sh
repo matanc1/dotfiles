@@ -26,6 +26,7 @@ alias ..='sudo $(fc -ln -1)'
 alias dpr='echo "y" | docker container prune'
 alias drmi='docker rmi'
 alias dim='docker images'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 
 function start_dev_env {
