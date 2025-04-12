@@ -5,3 +5,5 @@ source $HOME/.dotfiles/zsh/ohmyzsh_custom_init.sh
 source ~/.bashrc
 eval "$(atuin init zsh)"
 eval "$(atuin init zsh)"
+
+. "$HOME/.atuin/bin/env"
